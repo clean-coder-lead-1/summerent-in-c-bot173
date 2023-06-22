@@ -2,13 +2,14 @@
 #include <stdio.h>
 
 BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
+  BreachType retval = NORMAL;
   if(value < lowerLimit) {
-    return TOO_LOW;
+    retval = TOO_LOW;
   }
   if(value > upperLimit) {
-    return TOO_HIGH;
+    retval = TOO_HIGH;
   }
-  return NORMAL;
+  return retval;
 }
 
 BreachType classifyTemperatureBreach(
@@ -28,6 +29,8 @@ BreachType classifyTemperatureBreach(
       lowerLimit = 0;
       upperLimit = 40;
       break;
+    default:
+      break;
   }
   return inferBreach(temperatureInC, lowerLimit, upperLimit);
 }
@@ -39,14 +42,15 @@ void checkAndAlert(
     batteryChar.coolingType, temperatureInC
   );
 
-  switch(alertTarget) {
-    case TO_CONTROLLER:
-      sendToController(breachType);
-      break;
-    case TO_EMAIL:
-      sendToEmail(breachType);
-      break;
+  if(TO_CONTROLLER == alertTarget)
+  {
+    sendToController(breachType);
   }
+  else
+  {
+    sendToEmail(breachType);
+  }
+
 }
 
 void sendToController(BreachType breachType) {
@@ -66,6 +70,7 @@ void sendToEmail(BreachType breachType) {
       printf("Hi, the temperature is too high\n");
       break;
     case NORMAL:
+    default:
       break;
   }
 }
