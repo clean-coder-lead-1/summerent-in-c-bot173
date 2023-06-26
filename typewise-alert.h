@@ -1,9 +1,10 @@
 #pragma once
 
 typedef enum {
-  PASSIVE_COOLING,
-  HI_ACTIVE_COOLING,
-  MED_ACTIVE_COOLING
+  PASSIVE_COOLING =0u,
+  HI_ACTIVE_COOLING =1u,
+  MED_ACTIVE_COOLING =2u,
+  COOLING_MAX =3u
 } CoolingType;
 
 typedef enum {
