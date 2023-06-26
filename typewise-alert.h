@@ -13,6 +13,12 @@ typedef enum {
   BREACHTYPE_MAX =3u,
 } BreachType;
 
+typeded struct {
+  int lowerlimit;
+  int upperlimit;
+} TempLimit;
+
+
 BreachType inferBreach(double value, double lowerLimit, double upperLimit);
 BreachType classifyTemperatureBreach(CoolingType coolingType, double temperatureInC);
 
