@@ -68,7 +68,5 @@ void sendToEmail(BreachType breachType) {
       printf("Hi, the temperature is too high\n");
       break;
     case NORMAL:
-    default:
-      break;
   }
 }
