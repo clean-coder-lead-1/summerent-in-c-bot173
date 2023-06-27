@@ -16,7 +16,7 @@ BreachType classifyTemperatureBreach(
     CoolingType coolingType, double temperatureInC) {
 
 BreachType retval = TOO_HIGH;
-TempLimit limit_Table[COOLING_MAX] ={0};
+TempLimit limit_Table[COOLING_MAX];
 limit_Table[PASSIVE_COOLING].lowerLimit =0;
 limit_Table[PASSIVE_COOLING].upperLimit =35;
 limit_Table[HI_ACTIVE_COOLING].lowerLimit =0;
