@@ -14,9 +14,9 @@ typedef enum {
   BREACHTYPE_MAX =3u,
 } BreachType;
 
-typeded struct {
-  int lowerlimit;
-  int upperlimit;
+typedef struct {
+  int lowerLimit;
+  int upperLimit;
 } TempLimit;
 
 
