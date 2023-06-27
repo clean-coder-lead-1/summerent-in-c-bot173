@@ -14,7 +14,7 @@ TEST_CASE("Infer breach Too High")
 
 TEST_CASE("Infer breach Normal")
 {
-  REQUIRE(inferBreach(-70,-50,-100) == NORMAL);
+  REQUIRE(inferBreach(-70,-100,-50) == NORMAL);
 }
 
 TEST_CASE("Infer breach Invalid")
